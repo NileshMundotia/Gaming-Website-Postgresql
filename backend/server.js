@@ -92,12 +92,15 @@ app.post("/api/login", async (req, res) => {
 });
 // Serve static files
 app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'src', 'pages', 'login')));
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..','frontend', 'index.html'));
 });
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'frontend', 'src','pages','login','login.html'));
+    res.sendFile(path.join(__dirname, '..','frontend', 'index.html'));
 });
 
 app.get('/dashboard', (req, res) => {
